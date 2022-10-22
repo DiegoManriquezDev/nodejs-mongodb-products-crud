@@ -1,0 +1,44 @@
+{{#if productos}}
+<table class="table table-condensed table-bordered table-hover table-dark">
+
+  <thead>
+    <tr>
+      <th>N.</th>
+      <th>Producto</th>
+      <th>Descripción</th>
+      <th>Precio Mayorista</th>
+      <th>Precio Minorista</th>
+      <th>Operaciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each productos}}
+    
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{nombreProducto}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{precioMayorista}}</td>
+            <td>{{precioMinorista}}</td>
+            <td class="row">
+
+              <a href="/edit/{{_id}}" class="btn btn-info mb-1">Editar</a>
+
+              <a href="/delete/{{_id}}" class="btn btn-danger">Eliminar</a>
+                
+            </td>
+        </tr>
+    
+    {{/each}}
+  </tbody>
+
+</table>
+
+{{else}}
+<div class="text-center text-white">
+  <h1>No hay productos</h1>
+  <img src="" alt="">
+</div>
+
+{{/if}}
